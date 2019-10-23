@@ -11,14 +11,14 @@ describe 'SiteGenerator' do
     expect(site_generator.rendered_path).to eq("./tmp/_site")
   end
 
-  # it 'builds an index.html' do
-  #   site_generator.build_index
-  #   index = File.read("./tmp/_site/index.html")
-  #   expect(index).to include("artists/index.html")
-  #   expect(index).to include("genres/index.html")
-  #   expect(index).to include("songs/index.html")
-  #   expect(index).to include("2")
-  # end
+  it 'builds an index.html' do
+    site_generator.build_index
+    index = File.read("./tmp/_site/index.html")
+    expect(index).to include("artists/index.html")
+    expect(index).to include("genres/index.html")
+    expect(index).to include("songs/index.html")
+    expect(index).to include("2")
+  end
 
   it 'builds an artist index' do
     site_generator.build_artists_index
